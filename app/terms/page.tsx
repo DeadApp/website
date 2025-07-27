@@ -5,222 +5,185 @@ export default function Terms() {
     <div className="mx-auto max-w-4xl px-4 py-8">
       <h1 className="text-3xl font-medium">Terms of Service</h1>
       <div className="mt-2 prose max-w-none space-y-6">
-        <p className="text-zinc-400">Last Updated: April 8, 2025</p>
+        <p className="text-zinc-400">Last Updated: July 27, 2025</p>
 
         <h2 className="text-xl font-semibold mt-6">1. Introduction</h2>
         <p className="text-zinc-200">
-          Welcome to Hoefax, a service provided by Prince Technologies LLC
-          ("we," "our," or "us"). By accessing or using our website or services
-          (collectively, the "Service"), you agree to be bound by these Terms of
-          Service ("Terms"). If you do not agree to these Terms, you may not use
-          the Service.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">2. Account Registration</h2>
-        <p className="text-zinc-200">
-          To use the Service, you must create an account. You agree to provide
-          accurate and complete information during the registration process and
-          to keep your account information up to date. You are responsible for
-          maintaining the confidentiality of your account credentials and for
-          all activities that occur under your account. You must be at least 18
-          years old to use the Service.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">3. User Conduct</h2>
-        <p className="text-zinc-200">
-          You agree to use the Service in compliance with all applicable laws
-          and regulations. You may not:
-        </p>
-        <ul className="list-disc pl-6 my-2">
-          <li>
-            Post false, defamatory, or misleading information about any
-            individual
-          </li>
-          <li>Harass, threaten, or intimidate other users</li>
-          <li>Impersonate any person or entity</li>
-          <li>Violate the privacy rights of others</li>
-          <li>
-            Post explicit, pornographic, or otherwise objectionable content
-          </li>
-          <li>Use the Service for any illegal or unauthorized purpose</li>
-          <li>
-            Scrape, copy, or reproduce content from the Service without
-            permission
-          </li>
-          <li>Use automated methods to access the Service</li>
-          <li>Share your account credentials with others</li>
-        </ul>
-        <p className="text-zinc-200">
-          You are solely responsible for the content you post on the Service,
-          and you acknowledge that Prince Technologies LLC does not endorse or
-          verify any user-generated content.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">
-          4. Content Ownership and License
-        </h2>
-        <p className="text-zinc-200">
-          By posting content on the Service, you grant Prince Technologies LLC a
-          non-exclusive, royalty-free, worldwide license to use, display,
-          reproduce, and distribute that content on the Service. You represent
-          and warrant that you have the necessary rights to grant this license
-          and that your content does not infringe on any third-party rights,
-          including copyrights, trademarks, or privacy rights.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">
-          5. User-Generated Content
-        </h2>
-        <p className="text-zinc-200">
-          The Service includes user-generated content, such as profiles. Prince
-          Technologies LLC does not control, verify, or endorse any
-          user-generated content. You acknowledge that user-generated content
-          may be inaccurate, offensive, or objectionable, and you agree to use
-          the Service at your own risk.
-        </p>
-
-        <p className="text-zinc-200">
-          Hoefax is a platform for sharing personal experiences and opinions
-          about individuals' dating and social histories. All content on Hoefax
-          is user-generated and reflects the personal experiences and opinions
-          of individual users. This content is subjective and not verified as
-          objective fact. Users should exercise their own judgment when
-          interpreting or relying on this information.
-        </p>
-
-        <p className="text-zinc-200">
-          Do not post false, misleading, or malicious information with the
-          intent to defame, harm, or damage the reputation of any individual.
-          Violating content will be removed, and users responsible may face
-          account termination.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">6. Content Guidelines</h2>
-        <p className="text-zinc-200">
-          The following content is strictly prohibited:
-        </p>
-        <ul className="list-disc pl-6 my-2">
-          <li>Sexually explicit images or videos</li>
-          <li>
-            Confidential personal information (e.g., home addresses, phone
-            numbers, private health details)
-          </li>
-          <li>Doxxing or attempts to expose private contact details</li>
-          <li>Content promoting illegal activities</li>
-        </ul>
-
-        <h2 className="text-xl font-semibold mt-6">7. Legal Disclaimer</h2>
-        <p className="text-zinc-200">
-          Hoefax does not provide consumer reports and is not a consumer
-          reporting agency under the Fair Credit Reporting Act (FCRA).
-          Information on our platform may not be 100% accurate, complete, or
-          current, and should not be used as a substitute for your own due
-          diligence. Hoefax and its operators are not liable for any damages,
-          losses, or harm arising from the use of this information. We do not
-          verify or endorse user-submitted content. Use of this service is at
-          your own risk.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">8. Privacy</h2>
-        <p className="text-zinc-200">
-          Our Privacy Policy explains how we collect, use, and protect your
-          personal information. By using the Service, you consent to our privacy
-          practices as described in the Privacy Policy.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">9. Disclaimers</h2>
-        <p className="text-zinc-200">
-          THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND,
-          EXPRESS OR IMPLIED. PRINCE TECHNOLOGIES LLC DISCLAIMS ALL WARRANTIES,
-          INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
-          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
-          NON-INFRINGEMENT. WE DO NOT GUARANTEE THE ACCURACY, COMPLETENESS, OR
-          RELIABILITY OF ANY CONTENT ON THE SERVICE. YOUR USE OF THE SERVICE IS
-          AT YOUR OWN RISK.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">
-          10. Limitation of Liability
-        </h2>
-        <p className="text-zinc-200">
-          IN NO EVENT SHALL PRINCE TECHNOLOGIES LLC BE LIABLE FOR ANY INDIRECT,
-          INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF
-          OR RELATED TO YOUR USE OF THE SERVICE. OUR TOTAL LIABILITY TO YOU FOR
-          ANY CLAIM SHALL NOT EXCEED $100.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">11. Indemnification</h2>
-        <p className="text-zinc-200">
-          You agree to indemnify, defend, and hold harmless Prince Technologies
-          LLC, its officers, directors, employees, and agents from and against
-          any claims, damages, liabilities, costs, or expenses (including
-          reasonable attorneys' fees) arising from your use of the Service, your
-          violation of these Terms, or your infringement of any third-party
-          rights.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">
-          12. Content Removal Rights
-        </h2>
-        <p className="text-zinc-200">
-          We reserve the right to remove any content from the Service at any
-          time, for any reason, including but not limited to content that
-          violates these Terms, is objectionable, or is the subject of a legal
-          complaint. We may also edit or modify content as necessary to comply
-          with applicable laws or to improve the Service.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">13. Termination</h2>
-        <p className="text-zinc-200">
-          We reserve the right to terminate or suspend your account and access
-          to the Service at any time, without notice, for any reason, including
-          but not limited to your violation of these Terms. Upon termination,
-          your right to use the Service will immediately cease.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">
-          14. Governing Law and Dispute Resolution
-        </h2>
-        <p className="text-zinc-200">
-          These Terms shall be governed by and construed in accordance with the
-          laws of the State of North Carolina, without regard to its conflict of
-          law principles. Any dispute arising out of or relating to these Terms
-          or the Service shall be resolved through binding arbitration in North
-          Carolina, in accordance with the rules of the American Arbitration
-          Association.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">15. Changes to Terms</h2>
-        <p className="text-zinc-200">
-          We may modify these Terms at any time. We will notify you of any
-          material changes by posting the updated Terms on the Service or
-          through other communication methods. Your continued use of the Service
-          after any changes indicates your acceptance of the modified Terms.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">
-          16. Copyright Infringement Claims
-        </h2>
-        <p className="text-zinc-200">
-          If you believe that any content on the Service infringes your
-          copyright, please use our DMCA form to submit a claim.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6">17. Contact Us</h2>
-        <p className="text-zinc-200">
-          If you have any questions about these Terms, please contact us at{' '}
+          Welcome to Dead (
           <Link
-            className="text-white underline underline-offset-4"
-            href="mailto:support@hoefax.io"
+            href="https://getdead.app"
+            className="underline underline-offset-4"
           >
-            support@hoefax.io
+            getdead.app
           </Link>
-          . For legal inquiries, please email{' '}
+          ), a mobile application and website (collectively, the "Service")
+          owned and operated by Prince Technologies LLC ("we," "our," or "us").
+          By accessing or using the Service, you agree to be bound by these
+          Terms of Service ("Terms"). If you do not agree with these Terms,
+          please discontinue use of the Service immediately.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">
+          2. Eligibility & Account Registration
+        </h2>
+        <p className="text-zinc-200">
+          You must be at least 13 years of age (or older, if required by local
+          law) to use Dead. Some features, including premium subscriptions, may
+          require you to create an account. You agree to provide accurate
+          information when creating an account and to keep that information up
+          to date. You are responsible for all activities that occur under your
+          account.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">
+          3. Content and Intellectual Property
+        </h2>
+        <p className="text-zinc-200">
+          Dead provides jokes, riddles, puns, one-liners, short stories, and
+          similar humorous content ("Content") for entertainment purposes only.
+          Unless otherwise noted, all Content and software associated with the
+          Service are the property of Prince Technologies LLC or its licensors
+          and are protected by intellectual-property laws. You may not
+          reproduce, distribute, modify, or create derivative works from the
+          Service without our prior written permission.
+        </p>
+
+        <h3 className="text-lg font-semibold mt-4">
+          3.1 User-Generated Content
+        </h3>
+        <p className="text-zinc-200">
+          If you submit jokes, feedback, or other materials ("User Content"),
+          you grant us a non-exclusive, worldwide, royalty-free license to use,
+          display, reproduce, and distribute that User Content in connection
+          with the Service. You represent that you own or have the necessary
+          rights to submit such User Content and that it does not infringe any
+          third-party rights.
+        </p>
+
+        <h3 className="text-lg font-semibold mt-4">3.2 Third-Party Sources</h3>
+        <p className="text-zinc-200">
+          Some jokes may originate from public-domain sources, community
+          submissions, or third-party websites (see "Resources" list in our
+          FAQ). All jokes are provided "as is" and may not be verified for
+          accuracy or originality.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">4. Acceptable Use</h2>
+        <p className="text-zinc-200">You agree not to:</p>
+        <ul className="list-disc pl-6 my-2">
+          <li>Use the Service for any illegal or unauthorized purpose;</li>
+          <li>
+            Post or submit content that is defamatory, hateful, harassing, or
+            violates any law;
+          </li>
+          <li>
+            Attempt to reverse engineer, decompile, or otherwise interfere with
+            the Service;
+          </li>
+          <li>
+            Automate access to the Service (e.g., scraping, bots) without our
+            prior consent;
+          </li>
+          <li>
+            Share your account credentials or sell access to premium packs.
+          </li>
+        </ul>
+
+        <h2 className="text-xl font-semibold mt-6">
+          5. In-App Purchases & Subscriptions
+        </h2>
+        <p className="text-zinc-200">
+          Dead offers premium joke packs and subscription plans that unlock
+          additional content. Prices, billing cycles, and renewal terms are
+          presented in-app at the time of purchase. Payments are processed by
+          Apple App Store or Google Play, and their respective terms apply. All
+          subscription fees are non-refundable except as required by law.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">6. Sharing</h2>
+        <p className="text-zinc-200">
+          The Service allows you to share jokes as images. Shared images include
+          Dead branding and may be publicly visible on third-party platforms.
+          You are solely responsible for the content you share and for complying
+          with the terms of any platform where you post.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">
+          7. Disclaimer of Warranties
+        </h2>
+        <p className="text-zinc-200">
+          THE SERVICE AND ALL CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE"
+          WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING
+          BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+          PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE
+          THAT THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE OR THAT CONTENT
+          WILL BE TO YOUR TASTE OR NON-OFFENSIVE.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">
+          8. Limitation of Liability
+        </h2>
+        <p className="text-zinc-200">
+          TO THE MAXIMUM EXTENT PERMITTED BY LAW, PRINCE TECHNOLOGIES LLC SHALL
+          NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR
+          PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED
+          DIRECTLY OR INDIRECTly, OR ANY LOSS OF DATA, USE, GOOD-WILL, OR OTHER
+          INTANGIBLE LOSSES, RESULTING FROM (A) YOUR ACCESS TO OR USE OF THE
+          SERVICE; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY; OR (C)
+          UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">9. Indemnification</h2>
+        <p className="text-zinc-200">
+          You agree to indemnify and hold harmless Prince Technologies LLC and
+          its officers, directors, employees, and agents from any claims,
+          damages, or expenses arising out of your use of the Service or
+          violation of these Terms.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">10. Termination</h2>
+        <p className="text-zinc-200">
+          We may suspend or terminate your access to the Service at any time,
+          with or without notice, if we believe you have violated these Terms or
+          if necessary to protect the integrity of the Service.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">
+          11. Governing Law & Dispute Resolution
+        </h2>
+        <p className="text-zinc-200">
+          These Terms are governed by the laws of the State of North Carolina,
+          without regard to its conflict of law provisions. Any dispute arising
+          out of or relating to these Terms or the Service shall be resolved
+          through binding arbitration in North Carolina under the rules of the
+          American Arbitration Association.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">
+          12. Changes to These Terms
+        </h2>
+        <p className="text-zinc-200">
+          We may update these Terms periodically. Material changes will be
+          posted on the Service or communicated to you through other reasonable
+          means. Your continued use of the Service after such changes
+          constitutes acceptance of the revised Terms.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6">13. Contact Us</h2>
+        <p className="text-zinc-200">
+          For questions, feedback, or legal inquiries, please email us at{' '}
           <Link
             className="text-white underline underline-offset-4"
-            href="mailto:legal@hoefax.io"
+            href="mailto:support@getdead.app"
           >
-            legal@hoefax.io
+            support@getdead.app
+          </Link>{' '}
+          or{' '}
+          <Link
+            className="text-white underline underline-offset-4"
+            href="mailto:legal@getdead.app"
+          >
+            legal@getdead.app
           </Link>
           .
         </p>
