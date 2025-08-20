@@ -123,7 +123,7 @@ export function Navbar() {
             className="text-sm group rounded-full px-4"
           >
             <Link
-              href="mailto:support@deadapp.com"
+              href="https://tally.so/r/wv5j0l"
               target="_blank"
               rel="noopener noreferrer"
             >

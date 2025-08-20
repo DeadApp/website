@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {
-  RiTwitterXFill,
+  // RiTwitterXFill,
   RiInstagramLine,
   RiTiktokFill,
 } from '@remixicon/react';
@@ -9,16 +9,16 @@ export function Footer() {
   return (
     <footer className="text-center text-xs text-zinc-500">
       <div className="flex items-center justify-center gap-1">
-        <Link
+        {/* <Link
           href="https://x.com/deadapp"
           target="_blank"
           rel="noopener noreferrer"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
         >
           <RiTwitterXFill size={16} />
-        </Link>
+        </Link> */}
         <Link
-          href="https://instagram.com/deadapp"
+          href="https://instagram.com/thedeadapp"
           target="_blank"
           rel="noopener noreferrer"
           className="p-1 text-zinc-400 hover:text-white transition-colors"
@@ -26,7 +26,7 @@ export function Footer() {
           <RiInstagramLine size={16} />
         </Link>
         <Link
-          href="https://tiktok.com/@deadapp"
+          href="https://tiktok.com/@getdead.app"
           target="_blank"
           rel="noopener noreferrer"
           className="p-1 text-zinc-400 hover:text-white transition-colors"

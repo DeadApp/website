@@ -25,7 +25,7 @@ export default function Home() {
         <div className="mt-6">
           <div className="flex flex-row gap-0.5 justify-center items-center">
             <a
-              href="https://apps.apple.com/app/dead-jokes"
+              href="https://apps.apple.com/us/app/dead-funny-jokes-dark-humor/id6749788456"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-transform hover:scale-105"
@@ -40,7 +40,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://play.google.com/store/apps/details?id=com.dead.jokes"
+              href="https://play.google.com/store/apps/details?id=app.dead"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-transform hover:scale-105"
