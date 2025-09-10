@@ -11,19 +11,20 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
-  ),
+  metadataBase: new URL(siteUrl),
   title: "Dead - The internet's funniest jokes",
   description: 'The funniest, most savage jokes on the internet.',
   openGraph: {
     title: "Dead - The internet's funniest jokes",
+    description: 'The funniest, most savage jokes on the internet.',
     url: '/',
     siteName: 'Dead',
     images: [
       {
-        url: '/og-image.png',
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Dead - The internet's funniest jokes",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Dead - The internet's funniest jokes",
-    images: ['/og-image.png'],
+    images: [`${siteUrl}/og-image.png`],
   },
 };
 
