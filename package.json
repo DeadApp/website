@@ -36,6 +36,8 @@
     "lucide-react": "^0.483.0",
     "motion": "^12.9.2",
     "next": "^15.2.4",
+    "posthog-js": "^1.268.0",
+    "posthog-node": "^5.8.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sonner": "^2.0.3",
