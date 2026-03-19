@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import {
@@ -21,13 +21,30 @@ const navigationLinks: { href: string; label: string; active: boolean }[] = [];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const APP_STORE_URL =
+    'https://apps.apple.com/us/app/dead-funny-jokes-dark-humor/id6749788456';
+  const PLAY_STORE_URL =
+    'https://play.google.com/store/apps/details?id=app.dead';
+  const [downloadHref, setDownloadHref] = useState(APP_STORE_URL);
+
+  useEffect(() => {
+    try {
+      const ua =
+        typeof navigator !== 'undefined' ? navigator.userAgent || '' : '';
+      const isAndroid = /Android/i.test(ua);
+      const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+      if (isAndroid) setDownloadHref(PLAY_STORE_URL);
+      else if (isIOS) setDownloadHref(APP_STORE_URL);
+    } catch {
+      setDownloadHref(APP_STORE_URL);
+    }
+  }, []);
 
   return (
-    <header>
-      <div className="flex h-14 items-center justify-between gap-4">
-        {/* Left side */}
+    <header className="pt-1">
+      <div className="flex h-14 items-center justify-between gap-4 px-3 md:px-5">
         <div className="flex items-center gap-2">
-          {/* Mobile menu trigger */}
           <Popover open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <PopoverTrigger asChild>
               <Button
@@ -80,23 +97,22 @@ export function Navbar() {
               </NavigationMenu>
             </PopoverContent>
           </Popover>
-          {/* Main nav */}
           <div className="flex items-center gap-6">
             <Link
               href="/"
-              className="text-white hover:opacity-90 flex items-center gap-0.5 transition-opacity duration-200"
+              className="-mt-1 flex items-center gap-1 text-white transition-opacity duration-200 hover:opacity-90"
             >
               <Image
                 src="/logo-transparent.png"
                 alt="Dead"
-                width={32}
-                height={32}
+                width={38}
+                height={38}
+                className="object-contain"
               />
               <h1 className="text-xl font-semibold select-none tracking-tighter">
                 Dead
               </h1>
             </Link>
-            {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">
               <NavigationMenuList className="gap-2">
                 {navigationLinks.map((link, index) => (
@@ -114,23 +130,16 @@ export function Navbar() {
             </NavigationMenu>
           </div>
         </div>
-        {/* Right side */}
         <div className="flex items-center gap-2">
           <Button
-            variant="secondary"
             asChild
-            size="sm"
-            className="text-sm group rounded-full px-4"
+            className="bg-white text-black hover:bg-white/90 group rounded-full font-semibold transition-all duration-200"
           >
-            <Link
-              href="https://tally.so/r/wv5j0l"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact us
+            <Link href={downloadHref} target="_blank" rel="noopener noreferrer">
+              Try for free
               <ArrowRightIcon
                 className="-me-1 opacity-60 transition-transform group-hover:translate-x-0.5"
-                size={14}
+                size={16}
                 aria-hidden="true"
               />
             </Link>
