@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { useId } from 'react';
+import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 function GradientStar({ size = 22 }: { size?: number }) {
   const uid = useId();
@@ -37,6 +39,9 @@ function GradientStar({ size = 22 }: { size?: number }) {
 }
 
 export default function Home() {
+  const appStoreHref = useAppsFlyerSmartLink(APP_STORE_URL);
+  const playStoreHref = useAppsFlyerSmartLink(PLAY_STORE_URL);
+
   return (
     <main className="w-full">
       <div className="mx-auto max-w-6xl lg:max-w-5xl">
@@ -82,7 +87,7 @@ export default function Home() {
             <div className="mt-6">
               <div className="flex flex-row items-center justify-center gap-2 md:gap-1 lg:justify-start">
                 <a
-                  href="https://apps.apple.com/us/app/dead-funny-jokes-dark-humor/id6749788456"
+                  href={appStoreHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-[1.03]"
@@ -97,7 +102,7 @@ export default function Home() {
                   />
                 </a>
                 <a
-                  href="https://play.google.com/store/apps/details?id=app.dead"
+                  href={playStoreHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-[1.03]"

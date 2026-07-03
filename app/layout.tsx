@@ -7,6 +7,7 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { TikTokBrowserGate } from '@/components/tiktok-browser-gate';
+import { AppsFlyerSmartScriptLoader } from '@/components/appsflyer-smart-script-loader';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <body className={`${inter.variable} bg-background font-sans antialiased`}>
+        <AppsFlyerSmartScriptLoader />
         <TikTokBrowserGate>
           <div className="min-h-screen max-w-6xl mx-auto px-4 lg:max-w-5xl">
             <Navbar />

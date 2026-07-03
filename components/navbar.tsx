@@ -16,28 +16,26 @@ import {
 } from '@/components/ui/popover';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
+import {
+  APP_STORE_URL,
+  getStoreUrlForUserAgent,
+} from '@/lib/store-links';
+import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
 
 const navigationLinks: { href: string; label: string; active: boolean }[] = [];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const APP_STORE_URL =
-    'https://apps.apple.com/us/app/dead-funny-jokes-dark-humor/id6749788456';
-  const PLAY_STORE_URL =
-    'https://play.google.com/store/apps/details?id=app.dead';
-  const [downloadHref, setDownloadHref] = useState(APP_STORE_URL);
+  const [fallbackHref, setFallbackHref] = useState(APP_STORE_URL);
+  const downloadHref = useAppsFlyerSmartLink(fallbackHref);
 
   useEffect(() => {
     try {
       const ua =
         typeof navigator !== 'undefined' ? navigator.userAgent || '' : '';
-      const isAndroid = /Android/i.test(ua);
-      const isIOS = /iPhone|iPad|iPod/i.test(ua);
-
-      if (isAndroid) setDownloadHref(PLAY_STORE_URL);
-      else if (isIOS) setDownloadHref(APP_STORE_URL);
+      setFallbackHref(getStoreUrlForUserAgent(ua));
     } catch {
-      setDownloadHref(APP_STORE_URL);
+      setFallbackHref(APP_STORE_URL);
     }
   }, []);
 
