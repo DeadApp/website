@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useId } from 'react';
 import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
-import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 function GradientStar({ size = 22 }: { size?: number }) {
   const uid = useId();
@@ -39,8 +38,7 @@ function GradientStar({ size = 22 }: { size?: number }) {
 }
 
 export default function Home() {
-  const appStoreHref = useAppsFlyerSmartLink(APP_STORE_URL);
-  const playStoreHref = useAppsFlyerSmartLink(PLAY_STORE_URL);
+  const smartLinkHref = useAppsFlyerSmartLink();
 
   return (
     <main className="w-full">
@@ -87,7 +85,7 @@ export default function Home() {
             <div className="mt-6">
               <div className="flex flex-row items-center justify-center gap-2 md:gap-1 lg:justify-start">
                 <a
-                  href={appStoreHref}
+                  href={smartLinkHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-[1.03]"
@@ -102,7 +100,7 @@ export default function Home() {
                   />
                 </a>
                 <a
-                  href={playStoreHref}
+                  href={smartLinkHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-transform hover:scale-[1.03]"

@@ -6,6 +6,9 @@ export const APPSFLYER_SMART_SCRIPT_READY_EVENT =
 
 const oneLinkURL = 'https://dead.onelink.me/42xK';
 
+export const APPSFLYER_DEFAULT_ONELINK_URL =
+  `${oneLinkURL}?pid=website&c=website&af_channel=website&af_ss_ui=true`;
+
 type AppsFlyerParameter = {
   keys?: string[];
   defaultValue?: string;
