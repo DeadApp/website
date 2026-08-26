@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "linear-dead": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.linear.app/mcp",
+        "22232"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/linear-dead"
+      }
+    },
+    "revenuecat-dead": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.revenuecat.ai/mcp",
+        "22237"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "${userHome}/.mcp-auth/revenuecat-dead"
+      }
+    }
+  }
+}
