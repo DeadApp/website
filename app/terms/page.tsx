@@ -1,10 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+const title = 'Terms of Service | Dead';
+const description = 'The terms that govern your use of Dead.';
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: { title, description },
+  twitter: { title, description },
+};
 
 export default function Terms() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
       <h1 className="text-3xl font-medium">Terms of Service</h1>
-      <div className="mt-2 prose max-w-none space-y-6">
+      <div className="mt-2 space-y-6">
         <p className="text-zinc-400">Last Updated: June 13, 2026</p>
 
         <h2 className="text-xl font-semibold mt-6">1. Introduction</h2>

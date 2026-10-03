@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
-import {
-  ONELINK_LINKS,
-  type OneLinkPath,
-} from '@/lib/onelink-links';
+import { StoreHandoff } from '@/components/store-handoff';
+import { withForwardedSearchParams } from '@/lib/forward-search-params';
+import { detectInAppBrowser } from '@/lib/in-app-browser';
+import { ONELINK_LINKS, type OneLinkPath } from '@/lib/onelink-links';
 import { ShortLinkRedirect } from './short-link-redirect';
 
 const title = 'Dead: Funny Jokes';
-const description = 'Your daily dose of dark humor.';
+const description = "The internet's funniest jokes";
 const siteUrl = 'https://getdead.app';
 
 type ShortLinkPageProps = {
   params: Promise<{
     shortLink: string;
   }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
 function getOneLinkPath(shortLink: string): OneLinkPath | null {
@@ -65,7 +66,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function ShortLinkPage({ params }: ShortLinkPageProps) {
+export default async function ShortLinkPage({
+  params,
+  searchParams,
+}: ShortLinkPageProps) {
   const { shortLink } = await params;
   const oneLinkPath = getOneLinkPath(shortLink);
 
@@ -73,21 +77,20 @@ export default async function ShortLinkPage({ params }: ShortLinkPageProps) {
     notFound();
   }
 
-  const destinationUrl = ONELINK_LINKS[oneLinkPath];
+  const destinationUrl = withForwardedSearchParams(
+    ONELINK_LINKS[oneLinkPath],
+    await searchParams
+  );
+  const userAgent = (await headers()).get('user-agent') ?? '';
+  const browser = detectInAppBrowser(userAgent);
 
   return (
     <main className="fixed inset-0 z-50 bg-background" aria-label={title}>
-      <Suspense fallback={null}>
+      {browser.family === 'meta' ? (
+        <StoreHandoff destinationUrl={destinationUrl} />
+      ) : (
         <ShortLinkRedirect destinationUrl={destinationUrl} />
-      </Suspense>
-      <noscript>
-        <p className="flex min-h-dvh items-center justify-center px-4 text-center text-sm text-white/60">
-          JavaScript is required to open the tracked download link.{' '}
-          <a className="text-white underline" href={destinationUrl}>
-            Continue to Dead.
-          </a>
-        </p>
-      </noscript>
+      )}
     </main>
   );
 }

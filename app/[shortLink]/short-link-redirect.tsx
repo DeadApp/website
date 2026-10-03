@@ -1,47 +1,36 @@
 'use client';
 
-import { useEffect, useMemo } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { isTikTokInAppBrowser } from '@/lib/tiktok-browser';
-
-function buildRedirectUrl(
-  destinationUrl: string,
-  searchParams: URLSearchParams,
-): string {
-  const destination = new URL(destinationUrl);
-  const existingKeys = new Set(destination.searchParams.keys());
-
-  searchParams.forEach((value, key) => {
-    if (!existingKeys.has(key)) {
-      destination.searchParams.append(key, value);
-    }
-  });
-
-  return destination.toString();
-}
+import { useEffect } from 'react';
+import { useInAppBrowserInfo } from '@/components/in-app-browser-provider';
 
 export function ShortLinkRedirect({
   destinationUrl,
 }: {
   destinationUrl: string;
 }) {
-  const searchParams = useSearchParams();
-  const redirectUrl = useMemo(
-    () =>
-      buildRedirectUrl(
-        destinationUrl,
-        new URLSearchParams(searchParams.toString()),
-      ),
-    [destinationUrl, searchParams],
-  );
+  const info = useInAppBrowserInfo();
 
   useEffect(() => {
-    if (isTikTokInAppBrowser(navigator.userAgent)) {
+    if (info.family === 'tiktok' || info.family === 'meta') {
       return;
     }
 
-    window.location.replace(redirectUrl);
-  }, [redirectUrl]);
+    window.location.replace(destinationUrl);
+  }, [destinationUrl, info.family]);
 
-  return null;
+  if (info.family === 'tiktok' || info.family === 'meta') {
+    return null;
+  }
+
+  return <ContinueLink href={destinationUrl} />;
+}
+
+export function ContinueLink({ href }: { href: string }) {
+  return (
+    <p className="flex min-h-dvh items-center justify-center px-4 text-center text-sm text-white/60">
+      <a className="text-white underline" href={href}>
+        Continue to Dead.
+      </a>
+    </p>
+  );
 }
