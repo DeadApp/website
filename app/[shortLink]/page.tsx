@@ -2,14 +2,17 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { StoreHandoff } from '@/components/store-handoff';
-import { withForwardedSearchParams } from '@/lib/forward-search-params';
 import { detectInAppBrowser } from '@/lib/in-app-browser';
-import { ONELINK_LINKS, type OneLinkPath } from '@/lib/onelink-links';
+import {
+  getOneLinkDestination,
+  ONELINK_LINKS,
+  type OneLinkPath,
+} from '@/lib/onelink-links';
 import { ShortLinkRedirect } from './short-link-redirect';
 
 const title = 'Dead: Funny Jokes';
 const description = "The internet's funniest jokes";
-const siteUrl = 'https://getdead.app';
+const siteUrl = 'https://dead.app';
 
 type ShortLinkPageProps = {
   params: Promise<{
@@ -77,10 +80,7 @@ export default async function ShortLinkPage({
     notFound();
   }
 
-  const destinationUrl = withForwardedSearchParams(
-    ONELINK_LINKS[oneLinkPath],
-    await searchParams
-  );
+  const destinationUrl = getOneLinkDestination(oneLinkPath, await searchParams);
   const userAgent = (await headers()).get('user-agent') ?? '';
   const browser = detectInAppBrowser(userAgent);
 

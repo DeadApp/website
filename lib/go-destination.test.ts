@@ -10,8 +10,13 @@ describe('resolveGoDestination', () => {
   });
 
   it('allows https OneLink destinations', () => {
-    const url = 'https://dead.onelink.me/42xK/ig?pid=ig';
-    expect(resolveGoDestination(url)).toBe(url);
+    for (const url of [
+      'https://link.dead.app/4rpi/ig',
+      'https://link.dead.app/4rpi?pid=website&deep_link_value=home',
+      'https://deadapp.onelink.me/4rpi/tt',
+    ]) {
+      expect(resolveGoDestination(url)).toBe(url);
+    }
   });
 
   it('allows App Store and Play Store hosts', () => {
@@ -20,12 +25,18 @@ describe('resolveGoDestination', () => {
   });
 
   it('rejects non-https and unknown hosts', () => {
-    expect(resolveGoDestination('http://dead.onelink.me/42xK/ig')).toBe(
+    expect(resolveGoDestination('http://link.dead.app/4rpi/ig')).toBe(
+      APPSFLYER_DEFAULT_ONELINK_URL
+    );
+    expect(resolveGoDestination('https://dead.onelink.me/42xK/ig')).toBe(
       APPSFLYER_DEFAULT_ONELINK_URL
     );
     expect(resolveGoDestination('https://evil.example/phish')).toBe(
       APPSFLYER_DEFAULT_ONELINK_URL
     );
+    expect(
+      resolveGoDestination('https://link.dead.app.evil.example/4rpi/ig')
+    ).toBe(APPSFLYER_DEFAULT_ONELINK_URL);
     expect(resolveGoDestination('not-a-url')).toBe(
       APPSFLYER_DEFAULT_ONELINK_URL
     );

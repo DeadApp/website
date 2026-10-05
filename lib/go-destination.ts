@@ -1,7 +1,8 @@
 import { APPSFLYER_DEFAULT_ONELINK_URL } from '@/lib/appsflyer-smart-script';
+import { ONELINK_HOSTS } from '@/lib/onelink-config';
 
 const ALLOWED_DESTINATION_HOSTS = new Set([
-  'dead.onelink.me',
+  ...ONELINK_HOSTS,
   'apps.apple.com',
   'play.google.com',
 ]);

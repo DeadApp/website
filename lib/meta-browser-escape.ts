@@ -1,5 +1,6 @@
 import type { InAppBrowserApp, InAppBrowserOs } from '@/lib/in-app-browser';
 import { APP_STORE_URL } from '@/lib/store-links';
+import { ONELINK_HOSTS } from '@/lib/onelink-config';
 
 export const META_ESCAPE_WATCHDOG_MS = 1500;
 
@@ -39,7 +40,10 @@ export function buildAndroidIntentUrl(destinationUrl: string): string {
 function allowsAppStoreFallback(destinationUrl: string): boolean {
   try {
     const hostname = new URL(destinationUrl).hostname;
-    return hostname === 'apps.apple.com' || hostname === 'dead.onelink.me';
+    return (
+      hostname === 'apps.apple.com' ||
+      ONELINK_HOSTS.some((host) => host === hostname)
+    );
   } catch {
     return false;
   }

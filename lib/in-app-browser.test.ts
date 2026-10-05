@@ -86,8 +86,8 @@ describe('detectInAppBrowser', () => {
 
 describe('buildGoHandoffPath', () => {
   it('encodes the destination URL', () => {
-    expect(buildGoHandoffPath('https://dead.onelink.me/42xK/ig')).toBe(
-      '/go?to=https%3A%2F%2Fdead.onelink.me%2F42xK%2Fig'
+    expect(buildGoHandoffPath('https://link.dead.app/4rpi/ig')).toBe(
+      '/go?to=https%3A%2F%2Flink.dead.app%2F4rpi%2Fig'
     );
   });
 });

@@ -1,12 +1,20 @@
 'use client';
 
 import Image from 'next/image';
-import { useOutboundHref } from '@/components/in-app-browser-provider';
+import {
+  useInAppBrowserInfo,
+  useOutboundHref,
+} from '@/components/in-app-browser-provider';
+import { useAppsFlyerSmartLink } from '@/hooks/use-appsflyer-smart-link';
 import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 export function StoreBadges() {
-  const appStoreHref = useOutboundHref(APP_STORE_URL);
-  const playStoreHref = useOutboundHref(PLAY_STORE_URL);
+  const { os } = useInAppBrowserInfo();
+  const trackedHref = useAppsFlyerSmartLink();
+  const appStoreFallback = useOutboundHref(APP_STORE_URL);
+  const playStoreFallback = useOutboundHref(PLAY_STORE_URL);
+  const appStoreHref = os === 'ios' ? trackedHref : appStoreFallback;
+  const playStoreHref = os === 'android' ? trackedHref : playStoreFallback;
 
   return (
     <div className="mt-6">

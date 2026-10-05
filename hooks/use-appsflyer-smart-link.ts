@@ -6,6 +6,7 @@ import {
   APPSFLYER_DEFAULT_ONELINK_URL,
   APPSFLYER_SMART_SCRIPT_READY_EVENT,
   generateAppsFlyerOneLinkURL,
+  getAppsFlyerFallbackUrl,
 } from '@/lib/appsflyer-smart-script';
 import { hrefForInAppBrowser } from '@/lib/in-app-browser';
 
@@ -23,7 +24,11 @@ export function useAppsFlyerSmartLink(
   const info = useInAppBrowserInfo();
   const oneLinkUrl = useSyncExternalStore(
     subscribe,
-    () => generateAppsFlyerOneLinkURL() ?? fallbackUrl,
+    () =>
+      generateAppsFlyerOneLinkURL() ??
+      (fallbackUrl === APPSFLYER_DEFAULT_ONELINK_URL
+        ? getAppsFlyerFallbackUrl(window.location.search)
+        : fallbackUrl),
     () => fallbackUrl
   );
 

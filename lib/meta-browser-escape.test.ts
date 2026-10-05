@@ -8,7 +8,7 @@ import {
 } from '@/lib/meta-browser-escape';
 import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
-const DESTINATION = 'https://dead.onelink.me/42xK/ig';
+const DESTINATION = 'https://link.dead.app/4rpi/ig';
 
 describe('meta escape URL builders', () => {
   it('builds Instagram extbrowser URL', () => {
@@ -29,7 +29,7 @@ describe('meta escape URL builders', () => {
 
   it('builds Android intent URL', () => {
     expect(buildAndroidIntentUrl(DESTINATION)).toBe(
-      `intent://dead.onelink.me/42xK/ig#Intent;scheme=https;S.browser_fallback_url=${encodeURIComponent(DESTINATION)};end`
+      `intent://link.dead.app/4rpi/ig#Intent;scheme=https;S.browser_fallback_url=${encodeURIComponent(DESTINATION)};end`
     );
   });
 });
